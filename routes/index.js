@@ -1,16 +1,17 @@
 var express = require('express');
 var router = express.Router();
+const moment = require('moment')
 
 const messages = [
   {
-    text: "Hi there!",
-    user: "Amando",
-    added: new Date()
+    text: "Will you go out with me?",
+    user: "Charles",
+    added: moment("20111031", "YYYYMMDD").fromNow()
   },
   {
-    text: "Hello World!",
-    user: "Charles",
-    added: new Date()
+    text: "I have a boyfriend",
+    user: "Alexa",
+    added: moment("20160620", "YYYYMMDD").fromNow()
   }
 ];
 
@@ -19,9 +20,18 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Mini Message Board', messages: messages });
 });
 
-/* GET home page. */
+/* GET new form. */
 router.get('/new', function(req, res, next) {
   res.render('form', { title: 'Express' });
+});
+
+/* POST new message from form. */
+router.post('/new', function(req, res, next) {
+  const { messageText, messageUser } = req.body
+  console.log(req.body)
+  console.log('posting bois')
+  messages.push({text: messageText, user: messageUser, added: moment(new Date()).fromNow()});
+  res.redirect('/')
 });
 
 module.exports = router;

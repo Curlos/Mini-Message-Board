@@ -1,5 +1,37 @@
-form {
+body {
+  background-color: rgb(236, 236, 236);
+  font-family: Arial;
+}
+
+
+.message {
+  border-bottom: 1px solid gray;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+input {
+  padding: 10px;
+  margin-bottom: 5px;
+  border: none;
+}
+
+.newMessage, button {
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgb(32, 179, 228);
+  text-decoration: none;
+}
+
+button:hover {
+  background-color: rgb(15, 138, 179);
+}
+
+.newMessageForm {
   display: flex;
   flex-direction: column;
   width: 400px;
+  margin-top: 10px;
 }

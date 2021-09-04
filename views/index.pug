@@ -8,8 +8,11 @@ html
     h1= title
     p Welcome to #{title}
 
+    a(href='/new' class="newMessage") New Message
+
     each message in messages
       div(class='message')
         p= message.text
         p= message.user
         p= message.added
+

@@ -5,8 +5,9 @@ html
       include style.css
 
   body
+    a(href='/') Back to homepage
+
     form(method='POST' action='/new' class='newMessageForm')
-      input(type='text' placeholder='Title')
-      input(type='text' placeholder='Pineapples belong on pizza and nobody can tell me otherwise')
-      input(type='text' placeholder='Username')
+      input(type='text' name='messageText' placeholder='Pineapples belong on pizza and nobody can tell me otherwise' required)
+      input(type='text' name='messageUser' placeholder='Username' required)
       button(type='submit') Post
